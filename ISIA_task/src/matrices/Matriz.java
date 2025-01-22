@@ -47,7 +47,18 @@ public class Matriz {
         } 
         return matrizResultante; 
     } 
+    public static Matriz calcularTranspuesta(Matriz matriz) {
+        int filas = matriz.getDimension().height;
+        int columnas = matriz.getDimension().width;
+    Matriz transpuesta = new Matriz(columnas, filas, false);
 
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                transpuesta.datos[i][j] = matriz.datos[j][i];
+            }
+        }
+    return transpuesta;
+    }
     @Override
     public String toString(){
         String ret = "";

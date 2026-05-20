@@ -29,7 +29,7 @@ public class Matriz {
 
     public Matriz(int[][] valores) {
         if (valores == null || valores.length == 0 || valores[0] == null) {
-            throw new IllegalArgumentException("La matriz no puede ser vacia");
+            throw new IllegalArgumentException("La matriz no puede ser vacía");
         }
         int filas = valores.length;
         int columnas = valores[0].length;
@@ -109,7 +109,7 @@ public class Matriz {
 
     public static Matriz multiplicarDosMatrices(Matriz a, Matriz b) throws DimensionesIncompatibles {
         if (a.getColumnas() != b.getFilas()) {
-            throw new DimensionesIncompatibles("La multiplicacion de matrices requiere que el numero de columnas de A coincida con el numero de filas de B");
+            throw new DimensionesIncompatibles("La multiplicación de matrices requiere que el número de columnas de A coincida con el número de filas de B");
         }
         Matriz resultado = new Matriz(a.getFilas(), b.getColumnas(), false);
         for (int columna = 0; columna < resultado.getColumnas(); columna++) {
@@ -149,7 +149,7 @@ public class Matriz {
 
     private void validarIndices(int fila, int columna) {
         if (fila < 0 || fila >= getFilas() || columna < 0 || columna >= getColumnas()) {
-            throw new IndexOutOfBoundsException("Indice de matriz fuera de rango");
+            throw new IndexOutOfBoundsException("Índice de matriz fuera de rango");
         }
     }
 
